@@ -136,5 +136,3 @@ GET /convert?from=USD&to=INR,EUR,GBP&amount=100
 
 This project is licensed under the MIT License.
 
-```
-
