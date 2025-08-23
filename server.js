@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Currency Converter API is running 🚀');
+  res.send('Currency Converter API is running ');
 });
 
 app.get('/convert', async (req, res) => {
