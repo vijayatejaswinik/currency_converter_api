@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Currency Converter API is running 🚀');
+  res.send('Currency Converter API is running ');
 });
 
 app.get('/convert', async (req, res) => {
@@ -71,5 +71,5 @@ app.get('/convert', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} 🌐`);
+  console.log(`Server running on port ${PORT}`);
 });
