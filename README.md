@@ -4,11 +4,6 @@ A **full-stack Currency Converter** built with **Node.js + Express + Vanilla Jav
 
 ---
 
-## 🌐 Live Demo
-
-🔗 **Try it here:** [Currency Converter Live Demo](https://vijayatejaswinik.github.io/currency_converter_api/)
-
----
 
 ## 📌 Features
 
