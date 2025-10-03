@@ -1,12 +1,11 @@
-// server.js
 const express = require('express');
 const axios = require('axios');
-const dotenv = require('dotenv');
-
-dotenv.config();
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -30,31 +29,32 @@ app.get('/convert', async (req, res) => {
     const fromCurrency = from.toUpperCase();
 
     const conversions = {};
+
     for (const target of targets) {
       try {
-        const response = await axios.get('https://api.exchangerate.host/convert', {
+        // ✅ Using Frankfurter API (no access key)
+        const response = await axios.get(`https://api.frankfurter.app/latest`, {
           params: {
-            from: fromCurrency,
-            to: target,
             amount: amt,
-            access_key: process.env.EXCHANGERATE_API_KEY
+            from: fromCurrency,
+            to: target
           },
           timeout: 10000
         });
 
         const data = response.data;
 
-        if (!data || data.success === false || data.result === undefined) {
-          conversions[target] = { error: (data && data.error && data.error.type) || 'Conversion failed' };
-        } else {
+        if (data && data.rates && data.rates[target]) {
           conversions[target] = {
-            convertedAmount: data.result,
-            rate: data.info ? data.info.rate : (amt === 0 ? 0 : Number(data.result) / amt),
+            convertedAmount: data.rates[target],
+            rate: data.rates[target] / amt,
             date: data.date || null,
           };
+        } else {
+          conversions[target] = { error: 'Conversion failed' };
         }
       } catch (e) {
-        conversions[target] = { error: 'Network error to exchangerate.host' };
+        conversions[target] = { error: 'Network error to Frankfurter API' };
       }
     }
 
