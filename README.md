@@ -1,25 +1,39 @@
+# 💱 Currency Converter Web App & API 🚀
 
-# 💱 Currency Converter API 🚀
+A **full-stack Currency Converter** built with **Node.js + Express + Vanilla JavaScript**, supporting real-time currency conversions using the **Frankfurter API** (no API key required). Includes both a **REST API** and a **responsive frontend**.
 
-A simple **Node.js + Express** API for currency conversion, powered by [ExchangeRate.host](https://exchangerate.host).
+---
+
+## 🌐 Live Demo
+
+🔗 **Try it here:** [Currency Converter Live Demo](https://your-demo-link.com)
 
 ---
 
 ## 📌 Features
-- Convert from one currency to another
-- Support for multiple target currencies in a single request
-- Uses live exchange rates from ExchangeRate.host
-- Easy setup with `.env` file to keep API keys secure
+
+* **Frontend:**
+
+  * Responsive web app using HTML, CSS, and JavaScript
+  * Select base and target currencies with live results display
+
+* **Backend / API:**
+
+  * Convert from one currency to another
+  * Support for multiple target currencies in a single request
+  * Real-time exchange rates from **Frankfurter API**
+  * No API key required
 
 ---
 
 ## ⚡️ Setup Instructions
 
-### 1. Clone this repository
+### 1. Clone the repository
+
 ```bash
-git clone https://github.com/your-username/currency-converter-api.git
-cd currency-converter-api
-````
+git clone https://github.com/vijayatejaswinik/currency_converter_api.git
+cd currency_converter_api
+```
 
 ### 2. Install dependencies
 
@@ -27,26 +41,21 @@ cd currency-converter-api
 npm install
 ```
 
-### 3. Create `.env` file
-
-In the root folder, create a `.env` file:
-
-```
-EXCHANGERATE_API_KEY=your_api_key_here
-PORT=3000
-```
-
-### 4. Run the server
+### 3. Run the server
 
 ```bash
 node server.js
 ```
 
-The server will start on:
+The server will start at:
 
 ```
 http://localhost:3000
 ```
+
+### 4. Open the frontend
+
+Open `public/index.html` in your browser to use the web interface.
 
 ---
 
@@ -58,10 +67,10 @@ http://localhost:3000
 GET /
 ```
 
-Returns a health message:
+Returns a health check message:
 
 ```text
-Currency Converter API is running 🚀
+Currency Converter API is running
 ```
 
 ### Currency Conversion
@@ -70,7 +79,7 @@ Currency Converter API is running 🚀
 GET /convert?from=USD&to=INR&amount=100
 ```
 
-#### Example Response
+Example Response:
 
 ```json
 {
@@ -93,7 +102,7 @@ GET /convert?from=USD&to=INR&amount=100
 GET /convert?from=USD&to=INR,EUR,GBP&amount=100
 ```
 
-#### Example Response
+Example Response:
 
 ```json
 {
@@ -110,19 +119,11 @@ GET /convert?from=USD&to=INR,EUR,GBP&amount=100
 
 ---
 
-## 🛡️ Security
-
-* **Never commit your `.env` file** (already ignored via `.gitignore`).
-* Store your API key in `.env` and access it via `process.env.EXCHANGERATE_API_KEY`.
-
----
-
 ## 🛠️ Tech Stack
 
-* [Node.js](https://nodejs.org/)
-* [Express.js](https://expressjs.com/)
-* [Axios](https://axios-http.com/)
-* [dotenv](https://www.npmjs.com/package/dotenv)
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend / API:** Node.js, Express.js, Axios
+* **Currency Data Provider:** [Frankfurter API](https://www.frankfurter.app/)
 
 ---
 
@@ -131,8 +132,3 @@ GET /convert?from=USD&to=INR,EUR,GBP&amount=100
 **Kammari Vijaya Tejaswini**
 
 ---
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
