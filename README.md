@@ -115,9 +115,8 @@ Example Response:
 ---
 ## 🖼️ Screenshot
 
-Here’s how the Currency Converter looks:
+![Currency Converter Screenshot](assets/demo.png)
 
-![Currency Converter Screenshot](assets/imgg.png)
 
 
 ## 🛠️ Tech Stack
